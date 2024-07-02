@@ -30,6 +30,12 @@ jobs:
 
     - name: Grant execute permission for run-integration.sh
       run: chmod +x ./1-integration-test/scripts/run-integration.sh ./1-integration-test/scripts/wait-for-it.sh
+      
+    - name: Debug - List files in scripts directory
+      run: ls -la ./1-integration-test/scripts
+
+    - name: Debug - Print run-integration.sh contents
+      run: cat ./1-integration-test/scripts/run-integration.sh
 
     - name: Run integration script
       run: cd 1-integration-test && npm run test:integration
